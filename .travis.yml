@@ -8,6 +8,9 @@ python:
   - "3.8"
   - "3.8-dev"
   - "nightly"
+# install dependencies
+install:
+  - pip install -r requirements.txt
 # command to run tests
 script:
-  - sh tests/run_tests.sh
+  - sh $TRAVIS_BUILD_DIR/tests/run_tests.sh
