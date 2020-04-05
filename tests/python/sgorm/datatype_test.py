@@ -14,8 +14,6 @@ class TestField(unittest.TestCase):
         except Exception as e:
             self.fail("Module sgorm import error, because: {}".format(e))
 
-        self.sgorm = sgorm
-
     def test_value_getter_and_setter(self):
         field1 = self.sgorm.Field("code", "Asset_01")
         field2 = self.sgorm.Field("code", "Asset_02")

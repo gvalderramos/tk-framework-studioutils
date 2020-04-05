@@ -7,6 +7,7 @@ def _resolve_paths():
         sys.path.insert(0, os.path.dirname(__file__))
 
     from .Connection import Connection, SgAuth
+    from .Model import Entity, Field, Asset
 
 
 _resolve_paths()
