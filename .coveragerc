@@ -1,0 +1,13 @@
+[run]
+source=python
+omit=
+    *studioutils_third_party*
+
+[paths]
+source=
+    python/sgorm
+    */python/sgorm
+
+[report]
+exclude_lines =
+    raise NotImplementedError
