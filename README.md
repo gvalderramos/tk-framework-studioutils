@@ -1,2 +1,3 @@
 # tk-framework-studioutils
-Custom Shotgun framework
+
+This repository provides a set of tools that facilitate communication with Shotgun.
