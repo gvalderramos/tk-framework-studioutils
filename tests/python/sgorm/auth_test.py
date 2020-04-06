@@ -31,9 +31,7 @@ class TestAuth(unittest.TestCase):
 
     def test_script_auth_method(self):
         auth = self.sgorm.SgAuth(
-            host=self.host,
-            script_name=self.script_name,
-            script_pass=self.script_password,
+            host=self.host, script_name=self.script_name, script_pass=self.script_pass,
         )
         self.assertTrue(
             auth.script_auth_method,
@@ -44,9 +42,7 @@ class TestAuth(unittest.TestCase):
         from studioutils_third_party import shotgun_api3
 
         auth = self.sgorm.SgAuth(
-            host=self.host,
-            script_name=self.script_name,
-            script_pass=self.script_password,
+            host=self.host, script_name=self.script_name, script_pass=self.script_passw,
         )
         sg = auth.connect()
         self.assertIsInstance(sg, shotgun_api3.Shotgun, "Failed to connect to shotgun.")
