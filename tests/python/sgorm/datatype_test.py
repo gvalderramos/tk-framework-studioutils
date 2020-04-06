@@ -2,7 +2,6 @@ import os
 import sys
 import json
 import unittest
-from pprint import pprint
 
 
 class TestField(unittest.TestCase):

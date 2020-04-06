@@ -1,2 +1,2 @@
-from . import sgorm
-from . import studioutils_third_party
+import sgorm
+import studioutils_third_party

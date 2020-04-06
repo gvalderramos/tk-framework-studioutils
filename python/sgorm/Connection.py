@@ -1,8 +1,8 @@
-from .. import util
+from .decorators import singleton
 from studioutils_third_party import shotgun_api3
 
 
-@util.decorators.singleton
+@singleton
 class Connection(object):
     def __init__(self):
         self.__sg = None
