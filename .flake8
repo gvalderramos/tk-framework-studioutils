@@ -20,7 +20,8 @@ exclude =
     # Those are our third parties, do not lint them!
     python/studioutils_third_party/*,
     # Otherwise you'll have a lot of 'xxx' imported but unused
-    tests/python/*
+    tests/python/*,
+    docs/*
 
 # toolkit exceptions
 #
