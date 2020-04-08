@@ -18,7 +18,7 @@ exclude =
     *test*,
     __init__.py,
     # Those are our third parties, do not lint them!
-    python/studioutils_third_party/*,
+    python/vendor/*,
     # Otherwise you'll have a lot of 'xxx' imported but unused
     tests/python/*,
     docs/*

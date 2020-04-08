@@ -1,4 +1,4 @@
-import Model
+from . import model
 
 
 class Field(object):
@@ -20,7 +20,7 @@ class Field(object):
     def __get_other_inst_value(self, inst):
         if isinstance(inst, self.__class__):
             return inst.value
-        elif isinstance(inst, Model.Entity):
+        elif isinstance(inst, model.Entity):
             return {"type": inst.type.value, "id": inst.id.value}
         else:
             return inst

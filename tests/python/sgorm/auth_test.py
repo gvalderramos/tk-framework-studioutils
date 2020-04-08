@@ -7,7 +7,7 @@ import sys
 class TestAuth(unittest.TestCase):
     def setUp(self):
         try:
-            import sgorm
+            from python import sgorm
 
             self.sgorm = sgorm
         except Exception as e:
@@ -39,10 +39,10 @@ class TestAuth(unittest.TestCase):
         )
 
     def test_connection_by_script_user(self):
-        from studioutils_third_party import shotgun_api3
+        from vendor import shotgun_api3
 
         auth = self.sgorm.SgAuth(
-            host=self.host, script_name=self.script_name, script_pass=self.script_passw,
+            host=self.host, script_name=self.script_name, script_pass=self.script_pass,
         )
         sg = auth.connect()
         self.assertIsInstance(sg, shotgun_api3.Shotgun, "Failed to connect to shotgun.")

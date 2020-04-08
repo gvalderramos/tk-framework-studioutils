@@ -8,7 +8,7 @@ from pprint import pprint
 class TestConnection(unittest.TestCase):
     def setUp(self):
         try:
-            import sgorm
+            from python import sgorm
 
             self.sgorm = sgorm
         except Exception as e:
@@ -41,7 +41,7 @@ class TestConnection(unittest.TestCase):
         cnn = self.sgorm.Connection()
         self.assertIsNone(cnn.shotgun)
 
-        from studioutils_third_party import shotgun_api3
+        from vendor import shotgun_api3
 
         auth = self.sgorm.SgAuth(
             host=self.host, script_name=self.script_name, script_pass=self.script_pass,

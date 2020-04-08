@@ -1,7 +1,7 @@
 [run]
 source=python
 omit=
-    *studioutils_third_party*
+    *vendor*
 
 [paths]
 source=

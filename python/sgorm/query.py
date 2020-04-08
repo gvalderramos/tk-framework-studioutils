@@ -1,4 +1,4 @@
-import sgorm
+from .connection import Connection
 
 
 class Query(object):
@@ -6,7 +6,7 @@ class Query(object):
         self._filters = []
         self._model = model
         self._select = []
-        self._conn = sgorm.Connection()
+        self._conn = Connection()
         self.__valid_methods = ["find", "find_one", "create", "update"]
 
     @property

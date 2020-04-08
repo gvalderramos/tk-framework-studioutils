@@ -2,7 +2,7 @@
 Sgorm CLI
 """
 
-from studioutils_third_party import shotgun_api3
+from vendor import shotgun_api3
 import json
 import os
 import argparse

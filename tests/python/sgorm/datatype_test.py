@@ -7,7 +7,7 @@ import unittest
 class TestField(unittest.TestCase):
     def setUp(self):
         try:
-            import sgorm
+            from python import sgorm
 
             self.sgorm = sgorm
         except Exception as e:

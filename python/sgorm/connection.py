@@ -1,5 +1,5 @@
 from .decorators import singleton
-from studioutils_third_party import shotgun_api3
+from vendor import shotgun_api3
 
 
 @singleton
@@ -13,6 +13,10 @@ class Connection(object):
 
     @shotgun.setter
     def shotgun(self, auth):
+        if isinstance(auth, shotgun_api3.Shotgun):
+            self.__sg = auth
+            return
+
         if not isinstance(auth, SgAuth):
             raise RuntimeError(
                 "Auth parameter must be a SgAuth instance, not a '{}' instance".format(
