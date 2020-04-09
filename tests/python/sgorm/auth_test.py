@@ -21,15 +21,6 @@ class TestAuth(unittest.TestCase):
         self.script_name = os.getenv("SG_SCRIPT_NAME")
         self.script_pass = os.getenv("SG_SCRIPT_PASS")
 
-    def test_user_auth_method(self):
-        auth = self.sgorm.SgAuth(
-            host=self.host, user=self.user, user_password=self.user_password
-        )
-        res = auth.user_auth_method
-        self.assertTrue(
-            res, "Failed to assert if this class is a user auth method",
-        )
-
     def test_script_auth_method(self):
         auth = self.sgorm.SgAuth(
             host=self.host, script_name=self.script_name, script_pass=self.script_pass,
