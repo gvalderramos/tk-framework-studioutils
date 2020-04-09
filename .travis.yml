@@ -1,17 +1,12 @@
 language: python
 python:
-- '2.7'
-- '3.4'
-- '3.5'
-- '3.6'
-- '3.7'
-- '3.8'
-- 3.8-dev
-- nightly
+  - "2.6"
+  - "2.7"
+  - "3.7"
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
 script:
-- sh $TRAVIS_BUILD_DIR/tests/run_tests.sh
+  - sh $TRAVIS_BUILD_DIR/tests/run_tests.sh
 env:
   global:
     secure: JG59tcuzOP6ZFeeQKC5Tn/5bbHm6l1BWfuHERQ8iObZUOEKEXj2L0DrzIzGkcdW2ekhC25efGDlwCuWJ2tnIZeymBU5KrU1fXQBHEw5X6Ruq8dNA1HRnkBbR8v+mEqE1qg4zwEBSqUc4rqkKBADNdZtRxRo0MUwY+1JeeGVXYUsFq9GwCfj7DUIOla10KXU4RFQYa+0q1jdDIFl0UIhpzudLLcdTW3pyFtZVg5UY1jAXc+KYnw3YIwXsNPkUCwEmZhFM5JrxXxKOOvk9/QcxGv3hwE0BEw+uFmqSzI6+5F+w7uZLBgRaEWQNSK6XFVgddVenhHpPH4Q87tyVoDRBrMzILeJ2U5mbhyMyqmsgupB9RgSVXiEFsorqJ57YQ7eFhHpqj9QqQ8hC58C2Dz7mBTPp23+xPt0pjpAVeSjEjLhEHdAARXGp9Nv1fvTzP1icjCOyIj7LX3n/MFAx+rUKUMdFimd+25UO2GBQWpkJ8QOhAWvhULzkQgEaZsDfaGsePYSpwn8OwTJIdL36bZ5o2SlogxsP4rIpwhzn8LjaoWBwhu42mZly0/wqfq+t+A7srjof79ug4KT7NSJzFaynMW/oK3Tw7Sy1lQijqAtfFi8JcdYGBvyjuaRsNec6e51cXdHnDsWVPm9A9MRqU8/+xaAIO4/08xzMraJN3jOGFhw=
