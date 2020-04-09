@@ -3,6 +3,7 @@ import sys
 import json
 import unittest
 from pprint import pprint
+import shotgun_api3
 
 
 class TestConnection(unittest.TestCase):
@@ -40,8 +41,6 @@ class TestConnection(unittest.TestCase):
     def test_shotgun_connection(self):
         cnn = self.sgorm.Connection()
         self.assertIsNone(cnn.shotgun)
-
-        import shotgun_api3
 
         auth = self.sgorm.SgAuth(
             host=self.host, script_name=self.script_name, script_pass=self.script_pass,

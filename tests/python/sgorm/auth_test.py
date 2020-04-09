@@ -2,6 +2,7 @@ import os
 import unittest
 import json
 import sys
+import shotgun_api3
 
 
 class TestAuth(unittest.TestCase):
@@ -24,8 +25,9 @@ class TestAuth(unittest.TestCase):
         auth = self.sgorm.SgAuth(
             host=self.host, user=self.user, user_password=self.user_password
         )
-        self.assertTrue(
+        self.assertEqual(
             auth.user_auth_method,
+            True,
             "Failed to assert if this class is a user auth method",
         )
 
@@ -33,14 +35,13 @@ class TestAuth(unittest.TestCase):
         auth = self.sgorm.SgAuth(
             host=self.host, script_name=self.script_name, script_pass=self.script_pass,
         )
-        self.assertTrue(
+        self.assertEqual(
             auth.script_auth_method,
+            True,
             "Failed to assert if this class is a script auth method",
         )
 
     def test_connection_by_script_user(self):
-        import shotgun_api3
-
         auth = self.sgorm.SgAuth(
             host=self.host, script_name=self.script_name, script_pass=self.script_pass,
         )
