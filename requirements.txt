@@ -1,1 +1,2 @@
 coverage>=5.0
+git+git://github.com/shotgunsoftware/python-api.git

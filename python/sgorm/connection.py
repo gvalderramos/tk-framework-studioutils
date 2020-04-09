@@ -1,5 +1,5 @@
 from .decorators import singleton
-from vendor import shotgun_api3
+import shotgun_api3
 
 
 @singleton
