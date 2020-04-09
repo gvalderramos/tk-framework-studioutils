@@ -16,7 +16,7 @@ class TestAuth(unittest.TestCase):
 
         self.user = os.getenv("SG_USER")
         self.user_password = os.getenv("SG_USER_PASSWORD")
-        self.user_token = os.getenv("SG_USER_TOKEN")
+        self.user_token = os.getenv("SG_USER_TOKE")
         self.host = os.getenv("SG_HOST")
         self.script_name = os.getenv("SG_SCRIPT_NAME")
         self.script_pass = os.getenv("SG_SCRIPT_PASS")
@@ -25,7 +25,6 @@ class TestAuth(unittest.TestCase):
         auth = self.sgorm.SgAuth(
             host=self.host, user=self.user, user_password=self.user_password
         )
-        print(self.host, self.user, self.user_password)
         res = auth.user_auth_method
         self.assertTrue(
             res, "Failed to assert if this class is a user auth method",
