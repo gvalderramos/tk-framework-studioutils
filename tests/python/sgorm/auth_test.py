@@ -39,7 +39,7 @@ class TestAuth(unittest.TestCase):
         )
 
     def test_connection_by_script_user(self):
-        from vendor import shotgun_api3
+        import shotgun_api3
 
         auth = self.sgorm.SgAuth(
             host=self.host, script_name=self.script_name, script_pass=self.script_pass,

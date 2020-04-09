@@ -41,7 +41,7 @@ class TestConnection(unittest.TestCase):
         cnn = self.sgorm.Connection()
         self.assertIsNone(cnn.shotgun)
 
-        from vendor import shotgun_api3
+        import shotgun_api3
 
         auth = self.sgorm.SgAuth(
             host=self.host, script_name=self.script_name, script_pass=self.script_pass,
