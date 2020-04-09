@@ -58,7 +58,9 @@ class SgAuth(object):
     @property
     def user_auth_method(self):
         if self.__user:
+            print("is user")
             if self.__user_password or self.__user_token:
+                print("has pass or token")
                 return True
         return False
 
