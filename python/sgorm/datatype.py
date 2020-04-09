@@ -1,4 +1,4 @@
-from . import model
+from . import query
 
 
 class Field(object):
@@ -20,7 +20,7 @@ class Field(object):
     def __get_other_inst_value(self, inst):
         if isinstance(inst, self.__class__):
             return inst.value
-        elif isinstance(inst, model.Entity):
+        elif isinstance(inst, Entity):
             return {"type": inst.type.value, "id": inst.id.value}
         else:
             return inst
@@ -147,3 +147,32 @@ class Field(object):
     def name_ends_with(self, pattern):
         pattern = self.__get_other_inst_value(pattern)
         return [self.__field_name, "name_ends_with", pattern]
+
+
+class Entity(object):
+    def __init__(self, entity_type=None, entity_id=None):
+        self._to_commit = {}
+        self._query = query.Query(self)
+        # Default fields
+        self.type = Field("type", entity_type)
+        self.id = Field("id", entity_id)
+        self.updated_at = Field("updated_at", None)
+        self.created_by = Field("created_by", None)
+        self.created_at = Field("created_at", None)
+        self.open_notes = Field("open_notes", None)
+        self.notes = Field("notes", None)
+
+    def __eq__(self, other):
+        return [self.type.value, "is", {"type": other.type.value, "id": other.id.value}]
+
+    def __ne__(self, other):
+        return [
+            self.type.value,
+            "not_is",
+            {"type": other.type.value, "id": other.id.value},
+        ]
+
+    def find(self, select=None):
+        self._query.select = select
+        self._query.method = "find"
+        return self._query
