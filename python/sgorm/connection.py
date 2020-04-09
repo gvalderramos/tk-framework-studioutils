@@ -57,14 +57,11 @@ class SgAuth(object):
 
     @property
     def user_auth_method(self):
-        if self.__user:
-            print("is user")
-            print("has pass" if self.__user_password else "")
-            print("has token" if self.__user_token else "")
-            if self.__user_password or self.__user_token:
-                print("has pass or token")
-                return True
-        return False
+        return (
+            True
+            if self.__user and (self.__user_password or self.__user_token)
+            else False
+        )
 
     @property
     def script_auth_method(self):

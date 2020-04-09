@@ -25,10 +25,10 @@ class TestAuth(unittest.TestCase):
         auth = self.sgorm.SgAuth(
             host=self.host, user=self.user, user_password=self.user_password
         )
-        self.assertEqual(
-            auth.user_auth_method,
-            True,
-            "Failed to assert if this class is a user auth method",
+        print(self.host, self.user, self.user_password)
+        res = auth.user_auth_method
+        self.assertTrue(
+            res, "Failed to assert if this class is a user auth method",
         )
 
     def test_script_auth_method(self):
