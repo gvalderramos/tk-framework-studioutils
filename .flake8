@@ -18,10 +18,10 @@ exclude =
     *test*,
     __init__.py,
     # Those are our third parties, do not lint them!
-    python/vendor/*,
+    python/vendor*,
     # Otherwise you'll have a lot of 'xxx' imported but unused
-    tests/python/*,
-    docs/*
+    tests/python*,
+    docs*
 
 # toolkit exceptions
 #

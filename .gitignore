@@ -14,7 +14,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+lib
+!python/vendor/shotgun_api3/lib
 lib64/
 parts/
 sdist/
