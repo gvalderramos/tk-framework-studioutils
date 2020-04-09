@@ -57,11 +57,10 @@ class SgAuth(object):
 
     @property
     def user_auth_method(self):
-        return (
-            True
-            if self.__user and (self.__user_password or self.__user_token)
-            else False
-        )
+        if self.__user:
+            if self.__user_password or self.__user_token:
+                return True
+        return False
 
     @property
     def script_auth_method(self):
